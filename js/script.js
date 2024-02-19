@@ -11,8 +11,19 @@ function change(){
 
 
 
+  
+
+
+
+
+
+
+
 const ticket =document.getElementById('ticket-price').innerText
 
+const seatLeft = document.getElementById('seats-left').innerText
+
+// looping all seats
 
 const allBtn =document.getElementsByClassName('add-btn')
 let count =0
@@ -20,9 +31,14 @@ for(const btn of allBtn){
     btn.addEventListener('click', function(e){
         count=count+1
         
+        btn.classList.add('bg-green-500')
+
+
         document.getElementById('sup-seat').innerText = count
 
-        document.getElementById('seats-left').innerText = 40 - count
+        document.getElementById('seats-left').innerText = seatLeft - count
+
+//  Append Seat details
 
         const seatName =  e.target.innerText
         const seatPrice = ticket
@@ -43,9 +59,33 @@ for(const btn of allBtn){
   
                tr.appendChild(td)
                tr.appendChild(td3)
-
                tr.appendChild(td2)
-               selectedTable.appendChild(tr).parentNode
+               selectedTable.appendChild(tr)
+
+              const totalCost =document.getElementById('total').innerText
+
+              const convertedTotal = parseInt(totalCost)
+
+              const sum = convertedTotal + parseInt(seatPrice)
+
+              document.getElementById('total').innerText = sum
+
+
+              const grandTotal =document.getElementById('grand-total').innerText
+
+              const convertedGrandTotal = parseInt(grandTotal)
+
+              document.getElementById('grand-total').innerText =convertedGrandTotal + parseInt(seatPrice)
+
+              const sum2 = convertedGrandTotal + parseInt(seatPrice)
+
+              document.getElementById('total').innerText = sum2
+
+
+
+
+
+
        
 
 })}
