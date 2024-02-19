@@ -1,28 +1,12 @@
 
 
-function change(){
-
-    const buyTickets = document.getElementById('paribahan')
-
-    buyTickets.scrollIntoView()
-
-}
-
-
-
-
-  
-
-
-
-
-
 
 
 const ticket =document.getElementById('ticket-price').innerText
 
 const seatLeft = document.getElementById('seats-left').innerText
 
+let isCouponApplied = false;
 // looping all seats
 
 const allBtn =document.getElementsByClassName('add-btn')
@@ -30,7 +14,7 @@ let count =0
 for(const btn of allBtn){
     btn.addEventListener('click', function(e){
         count=count+1
-        
+        btn.classList.add("pointer-events-none")
         btn.classList.add('bg-green-500')
 
 
@@ -111,34 +95,47 @@ function totalCost(id, value) {
 
      const discount =document.getElementById('input')
 
-     const DiscountText =discount.value
+     const DiscountText = discount.value
+
+    const hide = document.getElementById('hide')
+
+
+
     
-     if(DiscountText ==="New15"){
+
+
+        if(DiscountText==="New15"){
+            
         setInnerText('grand-total', convertedTotalCost-convertedTotalCost*15/100)
-     }
+        isCouponApplied = true;
+        hide.classList.add('hidden')
+
+        }
+     
 
      else if(DiscountText ==="Couple 20"){
         setInnerText('grand-total', convertedTotalCost-convertedTotalCost*20/100)
+        isCouponApplied = true;
+        hide.classList.add('hidden')
      }
      else{
         setInnerText('grand-total', convertedTotalCost)
      }
 
-     
-    
   }
-  
 
 
+/////////////////////////////
 
 
+// function couponHide(elementId){
 
+//     const element = document.getElementById(elementId)
 
+//     element.classList.add('hidden')
+// }
 
-
-
-
-
+/////////////////////////////
 
   function setInnerText(id, value) {
     document.getElementById(id).innerText = value;
@@ -147,4 +144,18 @@ function totalCost(id, value) {
 
 
    
+function change(){
+
+    const buyTickets = document.getElementById('paribahan')
+
+    buyTickets.scrollIntoView()
+}
+
+
+
+
+
+
+
+
 

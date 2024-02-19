@@ -98,21 +98,21 @@
 
         </section>
         <!-- Offer section -->
-        <section class="w-11/12 lg:max-w-[1170px] mx-auto mt-48">
-            <p class="text-[40px] font-raleway font-bold text-center">Best offers for you</p>
+        <section class="w-11/12 lg:max-w-[1170px] mx-auto mt-7 lg:mt-48">
+            <p class="text-3xl lg:text-[40px] font-raleway font-bold text-center">Best offers for you</p>
 
             <div class="flex flex-col lg:flex-row  gap-5 h-[220px]  mt-12">
 
-                <div class="bg-[#FFBF0F] flex-1 rounded-3xl  text-center">
+                <div class="bg-[#FFBF0F] lg:flex-1 rounded-3xl  text-center">
                 
                  
-               <div class="flex">
+               <div class="flex flex-col lg:flex-row">
                 <div class="flex-1 py-10 space-y-2"><p class="font-inter text-[40px] font-black">15% OFF</p>
                     <p class="font-inter text-[20px] font-semibold">on your next purchase</p>
                     <p class="font-inter text-[18px] font-medium">use by January 2024</p>
                     
                     </div>
-                    <img src="images/cupon-devider.png" alt="">
+                    <img class="hidden sm:block" src="images/cupon-devider.png" alt="">
                     
 
                     <div class="px-10 py-[70px]">
@@ -128,13 +128,13 @@
                 <div class="bg-[#F78C9C] flex-1 rounded-3xl  text-center">
                 
                  
-                    <div class="flex">
+                    <div class="flex flex-col lg:flex-row">
                      <div class="flex-1 py-10 space-y-2"><p class="font-inter text-[40px] font-black">20% OFF</p>
                          <p class="font-inter text-[20px] font-semibold">on your next purchase</p>
                          <p class="font-inter text-[18px] font-medium">use by January 2024</p>
                          
                          </div>
-                         <img src="images/cupon-devider.png" alt="">
+                         <img class="hidden sm:block" src="images/cupon-devider.png" alt="">
                          
      
                          <div class="px-6 py-[70px]">
@@ -146,7 +146,7 @@
      
                      </div>           
             </div>
-            <div class="mt-[62px] text-center ">
+            <div class="mt-[700px] lg:mt-[62px] text-center ">
                 <button class="btn h-[65px] w-[188px] bg-transparent border-[#1DD100] text-[20px] font-bold font-raleway rounded-xl text-[#1DD100]">
                     See All Offers
                  </button>
@@ -162,11 +162,11 @@
     </div>
 
 <!-- ticket -->
-<div class="flex h-[418px] w-[1170px] mx-auto rounded-3xl bg-white mt-12 font-raleway ">
+<div class="flex flex-col lg:flex-row h-[418px] w-11/12 lg:w-[1170px] mx-auto rounded-3xl bg-white mt-12 font-raleway ">
 
     <div class="flex-1">
 
-        <div class="flex justify-between pt-8 px-5" >
+        <div class="flex flex-col lg:flex-row justify-between pt-8 px-5" >
             
             <div class="flex gap-4 px-5">
                 <img class="object-contain" src="images/bus-logo.png" alt="">
@@ -191,25 +191,25 @@
         
         
         
-        <div class="w-[800px] h-[258px] ml-8 mt-6 rounded-3xl bg-[#F7F8F8]">
+        <div class="w-11/12 lg:w-[800px] h-[258px] ml-8 mt-6 rounded-3xl bg-[#F7F8F8]">
 
-            <p class="mx-auto flex justify-between text-[18px] font-semibold text-[#030712 h-[45px] w-[744px] py-6 ]">
+            <p class="mx-auto flex flex-col lg:flex-row justify-between text-[18px] font-semibold text-[#030712 h-[45px] w-[744px] py-6 ]">
                 <span >Route</span> <span>Dhaka-Sylhet</span>
 
             </p>
 
-            <div class="border-b-2 border-dashed border-gray-200 mb-4 w-[744px] mx-auto pt-6"></div>
+            <div class="border-b-2 border-dashed border-gray-200 mb-4 w-11/12 lg:w-[744px] mx-auto pt-6"></div>
 
             
-            <p class="mx-auto flex justify-between text-[18px] font-semibold text-[#030712 h-[45px] w-[744px] py-2 ]">
+            <p class="mx-auto flex flex-col lg:flex-row justify-between text-[18px] font-semibold text-[#030712 h-[45px] w-11/12 lg:w-[744px] py-2 ]">
                 <span >Departure Time</span> <span>9:00PM</span>
 
             </p>
 
-            <div class="border-b-2 border-dashed border-gray-200 mb-4 w-[744px] mx-auto pt-4"></div>
+            <div class="border-b-2 border-dashed border-gray-200 mb-4 w-11/12 lg:w-[744px] mx-auto pt-4"></div>
 
 
-            <div class="flex justify-evenly mt-6 font-inter ">
+            <div class="flex flex-col lg:flex-row justify-evenly mt-6 font-inter ">
 
                 <button class="btn w-[232px]">
                     Boarding Point - Laxmipur
@@ -231,7 +231,7 @@
         
         </div>
         
-<img src="images/info-devider.png" alt="">
+<img class="hidden sm:block" src="images/info-devider.png" alt="">
 
         <div class="flex-1 py-36 px-14 text-center">
             <img class="w-full object-contain h-[40px]" src="images/fare.png" alt="">
@@ -420,11 +420,11 @@
 
         </table>
 <!-- Apply coupon  -->
-<div class="font-inter mt-4">
+<div  id="coupon-section" class="font-inter mt-4 ">
 
-    <label class="input w-[320px] h-[56px] mx-auto  flex items-center rounded-xl gap-2 ">
-        <input id="input" class="text-[14px] text-center font-normal " type="text" placeholder="Have any coupon ? ">
-      <button onclick="grandTotal()" id="apply" class="font-semibold text-white btn w-[80px] bg-[#1DD100] h-[40px] rounded-lg" >Apply</button>
+    <label onclick="hideClick()" id="hide" class="input w-[320px] h-[56px] mx-auto  flex items-center rounded-xl gap-2 ">
+        <input  id="input" class="text-[14px] text-center font-normal " type="text" placeholder="Have any coupon ? ">
+      <button onclick="grandTotal()"  id="apply" class="font-semibold text-white btn w-[80px] bg-[#1DD100] h-[40px] rounded-lg" >Apply</button>
       </label>
 
 </div>
@@ -434,7 +434,26 @@
     <p>BDT <span id="grand-total">0</span></p>
 </div>
 
-<button class="w-[409px] h-[64px] text-center mt-6 rounded-xl  text-white bg-[#1DD100] font-extrabold text-[20px] font-raleway" >Next</button>
+
+
+
+<label for="my_modal_7" class=" btn w-[409px] h-[64px] text-center mt-6 rounded-xl  text-white bg-[#1DD100] font-extrabold text-[20px] font-raleway">Next</label>
+
+
+<input type="checkbox" id="my_modal_7" class="modal-toggle" />
+<div class="modal" role="dialog">
+  <div class="modal-box items-center text-center ">
+    <img class="mx-auto mb-5" src="images/success.png" alt="">
+    <h3 class="text-lg font-bold text-[#27AE60]">SUCCESS</h3>
+
+    <p class="mt-[38px] text-[20px]  font-medium">Thank you for Booking Our Bus Seats. 
+We are working hard to find the best service and deals for you</p>
+
+<p class="font-light text-[20px] mt-4"> Shortly you will find a confirmation in your email.</p>
+<button  class=" btn w-[300px] h-[56px] mt-4 bg-[#27AE60] text-white rounded-full">Continue</button>
+  </div>
+  <label class="modal-backdrop" for="my_modal_7">Close</label>
+</div>
 
 
 </div>
