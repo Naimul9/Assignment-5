@@ -105,7 +105,7 @@ function totalCost(id, value) {
 
     if (  count == 4  ) { 
 
-        if (DiscountText === "New15") {
+        if (DiscountText === "NEW15") {
 
             setInnerText('grand-total', convertedTotalCost - convertedTotalCost * 15 / 100);
             isCouponApplied = true; 
