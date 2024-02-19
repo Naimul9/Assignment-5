@@ -103,7 +103,7 @@ function totalCost(id, value) {
     
 
 
-    if (  count <= 4 ) { 
+    if (  count == 4  ) { 
 
         if (DiscountText === "New15") {
 
@@ -121,6 +121,7 @@ function totalCost(id, value) {
 
     } else {
         setInnerText('grand-total', convertedTotalCost);
+  
     }
 
   }
