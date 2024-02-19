@@ -11,41 +11,34 @@ let isCouponApplied = false;
 
 const allBtn =document.getElementsByClassName('add-btn')
 let count =0
-for(const btn of allBtn){
-    btn.addEventListener('click', function(e){
-        count=count+1
-        btn.classList.add("pointer-events-none")
-        btn.classList.add('bg-green-500')
+for (const btn of allBtn) {
+    btn.addEventListener('click', function (e) {
+        if (count < 4) {
+            count = count + 1;
+            btn.classList.add("pointer-events-none");
+            btn.classList.add('bg-green-500');
 
+            document.getElementById('sup-seat').innerText = count;
+            document.getElementById('seats-left').innerText = seatLeft - count;
 
-        document.getElementById('sup-seat').innerText = count
+            const seatName = e.target.innerText;
+            const seatPrice = ticket;
 
-        document.getElementById('seats-left').innerText = seatLeft - count
+            const selectedTable = document.getElementById('selected-table');
+            const tr = document.createElement("tr");
+            const td = document.createElement("td");
+            td.innerText = seatName;
+            const td2 = document.createElement("td");
+            td2.innerText = seatPrice;
+            const td3 = document.createElement('td');
+            td3.innerText = "Economy";
 
-//  Append Seat details
+            tr.appendChild(td);
+            tr.appendChild(td3);
+            tr.appendChild(td2);
+            selectedTable.appendChild(tr);
 
-        const seatName =  e.target.innerText
-        const seatPrice = ticket
-
-  
-        const selectedTable =document.getElementById('selected-table')
-  
-        const tr = document.createElement("tr")
-  
-        const td = document.createElement("td")
-               td.innerText=seatName
-  
-               const td2 = document.createElement("td")  
-               td2.innerText=seatPrice
-
-               const td3 =document.createElement('td')
-               td3.innerText = "Economy"
-  
-               tr.appendChild(td)
-               tr.appendChild(td3)
-               tr.appendChild(td2)
-               selectedTable.appendChild(tr)
-
+ 
             //   const totalCost =document.getElementById('total').innerText
 
             //   const convertedTotal = parseInt(totalCost)
@@ -65,11 +58,17 @@ for(const btn of allBtn){
 
             //   document.getElementById('grand-total').innerText = sum2
 
-           totalCost('total',parseInt(seatPrice))
-           grandTotal('grand-total',parseInt(seatPrice))
+            totalCost('total', parseInt(seatPrice));
+            grandTotal('grand-total', parseInt(seatPrice));
+        }
+        if (count === 4) {
+            for (const btn of allBtn) {
+                btn.disabled
+            }
+        }
+    })
+}
 
-
-})}
 
 
 function totalCost(id, value) {
@@ -91,7 +90,7 @@ function totalCost(id, value) {
     
     const convertedTotalCost = parseInt(totalCost);
 
-     
+    setInnerText('grand-total', convertedTotalCost);
 
      const discount =document.getElementById('input')
 
@@ -104,23 +103,25 @@ function totalCost(id, value) {
     
 
 
-        if(DiscountText==="New15"){
-            
-        setInnerText('grand-total', convertedTotalCost-convertedTotalCost*15/100)
-        isCouponApplied = true;
-        hide.classList.add('hidden')
+    if (  count <= 4 ) { 
 
+        if (DiscountText === "New15") {
+
+            setInnerText('grand-total', convertedTotalCost - convertedTotalCost * 15 / 100);
+            isCouponApplied = true; 
+            hide.classList.add('hidden'); 
+
+        } else if (DiscountText === "Couple 20") {
+            setInnerText('grand-total', convertedTotalCost - convertedTotalCost * 20 / 100);
+            isCouponApplied = true;
+
+            hide.classList.add('hidden');
         }
-     
 
-     else if(DiscountText ==="Couple 20"){
-        setInnerText('grand-total', convertedTotalCost-convertedTotalCost*20/100)
-        isCouponApplied = true;
-        hide.classList.add('hidden')
-     }
-     else{
-        setInnerText('grand-total', convertedTotalCost)
-     }
+
+    } else {
+        setInnerText('grand-total', convertedTotalCost);
+    }
 
   }
 
