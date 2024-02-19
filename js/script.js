@@ -62,33 +62,89 @@ for(const btn of allBtn){
                tr.appendChild(td2)
                selectedTable.appendChild(tr)
 
-              const totalCost =document.getElementById('total').innerText
+            //   const totalCost =document.getElementById('total').innerText
 
-              const convertedTotal = parseInt(totalCost)
+            //   const convertedTotal = parseInt(totalCost)
 
-              const sum = convertedTotal + parseInt(seatPrice)
+            //   const sum = convertedTotal + parseInt(seatPrice)
 
-              document.getElementById('total').innerText = sum
-
-
-              const grandTotal =document.getElementById('grand-total').innerText
-
-              const convertedGrandTotal = parseInt(grandTotal)
-
-              document.getElementById('grand-total').innerText =convertedGrandTotal + parseInt(seatPrice)
-
-              const sum2 = convertedGrandTotal + parseInt(seatPrice)
-
-              document.getElementById('total').innerText = sum2
+            //   document.getElementById('total').innerText = sum
 
 
+            //   const grandTotal =document.getElementById('grand-total').innerText
 
+            //   const convertedGrandTotal = parseInt(grandTotal)
 
+            //   document.getElementById('grand-total').innerText =convertedGrandTotal + parseInt(seatPrice)
 
+            //   const sum2 = convertedGrandTotal + parseInt(seatPrice)
 
-       
+            //   document.getElementById('grand-total').innerText = sum2
+
+           totalCost('total',parseInt(seatPrice))
+           grandTotal('grand-total',parseInt(seatPrice))
+
 
 })}
+
+
+function totalCost(id, value) {
+    const totalCost = document.getElementById(id).innerText;
+    const convertedTotal = parseInt(totalCost)
+    const sum = convertedTotal + parseInt(value)
+    
+      setInnerText('total', sum)
+    
+  }
+
+
+
+  function grandTotal(){
+
+    
+
+    const totalCost = document.getElementById('total').innerText;
+    
+    const convertedTotalCost = parseInt(totalCost);
+
+     
+
+     const discount =document.getElementById('input')
+
+     const DiscountText =discount.value
+    
+     if(DiscountText ==="New15"){
+        setInnerText('grand-total', convertedTotalCost-convertedTotalCost*15/100)
+     }
+
+     else if(DiscountText ==="Couple 20"){
+        setInnerText('grand-total', convertedTotalCost-convertedTotalCost*20/100)
+     }
+     else{
+        setInnerText('grand-total', convertedTotalCost)
+     }
+
+     
+    
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  function setInnerText(id, value) {
+    document.getElementById(id).innerText = value;
+  }
+
+
 
    
 
